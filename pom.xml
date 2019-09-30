@@ -87,5 +87,6 @@
 	<modules>
 		<module>hqcloud-api</module>
 		<module>hqcloud-eurekaserver</module>
+		<module>hqcloud-club</module>
 	</modules>
 </project>
