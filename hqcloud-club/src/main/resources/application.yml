@@ -30,3 +30,17 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
+      
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:7001/eureka
+    instance: 
+        instance-id: hqcloud-club
+        prefer-ip-address: true
+        
+info: 
+    app.name: hqCloud-Club
+    company.name: www.hq.com
+    build.artifactId: $project.artifactId$
+    build.version: $project.version$
