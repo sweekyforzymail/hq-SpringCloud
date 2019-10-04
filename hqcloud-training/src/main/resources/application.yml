@@ -1,15 +1,9 @@
 server:
- port: 9000
- 
-mybatis:
-    config-location: classpath:mybatis/mybatis.cfg.xml
-    type-aliases-package: com.hq.entity
-    mapper-locations: 
-    - classpath:mybatis/mapper/**/*.xml
-    
+  port: 9001
+
 spring:
     application:
-        name: hqcloud-club
+        name: hqcloud-training
     datasource:
     # 使用druid数据源
       type: com.alibaba.druid.pool.DruidDataSource
@@ -30,17 +24,8 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-      
+
 eureka:
     client:
       service-url:
         defaultZone: http://localhost:8000/eureka/
-    instance: 
-        instance-id: hqcloud-club
-        prefer-ip-address: true
-        
-info: 
-    app.name: hqCloud-Club
-    company.name: www.hq.com
-    build.artifactId: $project.artifactId$
-    build.version: $project.version$
