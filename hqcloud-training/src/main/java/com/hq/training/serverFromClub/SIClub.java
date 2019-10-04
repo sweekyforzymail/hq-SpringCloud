@@ -23,20 +23,37 @@ public class SIClub {
 
 	private final String PERFIX_SERVER_URL = CloudServerNames.CLUB_URL.getServerUrl();
 
-	// 消费方式 一（restTemplate 方式） PS:当时用该方式时，服务提供方返回值为 "SUCCESS" 时，消费端不开心
 	@Autowired
 	private RestTemplate restTemplate;
 
-	// 调用服务-get club BY clubId
+	@Autowired
+	private SIClub2 siClub;
+
+	/**
+	 * 消费方式 一 （restTemplate 方式）
+	 */
 	@GetMapping("/sigleClubFromClub")
 	public Object sigleClubFromClub(@RequestParam Map<String, Object> paramMap) {
+
 		Object obj = restTemplate.getForObject(PERFIX_SERVER_URL + "/club/getClubSigle?clubId={clubId}", Club.class,
 				paramMap);
 		if (ObjectUtils.isEmpty(obj)) {
 			return "FILER";
 		} else {
-			return "SUCCESS";
+			return "SUCCESS";// PS:当时用该方式时，服务提供方返回值为 "SUCCESS" 时，消费端不开心
 		}
 	}
 
+	/**
+	 * 消费方式 二 （feign 主流方式）
+	 */
+	@GetMapping("/sigleClubFromClub2")
+	public Object sigleClubFromClub2(@RequestParam Map<String, Object> paramMap) {
+		Object obj = siClub.getClubSigle(paramMap);
+		if (ObjectUtils.isEmpty(obj)) {
+			return "FILER2";
+		} else {
+			return "SUCCESS2";
+		}
+	}
 }
