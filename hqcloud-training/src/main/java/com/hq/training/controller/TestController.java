@@ -1,4 +1,4 @@
-package com.hq.training.serverFromClub;
+package com.hq.training.controller;
 
 import java.util.Map;
 
@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.hq.entity.Club;
+import com.hq.training.serverFromClub.CloudServerNames;
+import com.hq.training.serverFromClub.EurekaServerClub;
 
 /**
  * 消费端
@@ -18,8 +21,8 @@ import com.hq.entity.Club;
  * Server_Instance_Club
  */
 @RestController
-@RequestMapping("/siClub")
-public class SIClub {
+@RequestMapping("/test")
+public class TestController {
 
 	private final String PERFIX_SERVER_URL = CloudServerNames.CLUB_URL.getServerUrl();
 
@@ -27,7 +30,7 @@ public class SIClub {
 	private RestTemplate restTemplate;
 
 	@Autowired
-	private SIClub2 siClub;
+	private EurekaServerClub eurekaServerClub;
 
 	/**
 	 * 消费方式 一 （restTemplate 方式）
@@ -49,11 +52,11 @@ public class SIClub {
 	 */
 	@GetMapping("/sigleClubFromClub2")
 	public Object sigleClubFromClub2(@RequestParam Map<String, Object> paramMap) {
-		Object obj = siClub.getClubSigle(paramMap);
+		Object obj = eurekaServerClub.clubSigle(paramMap);
 		if (ObjectUtils.isEmpty(obj)) {
 			return "FILER2";
 		} else {
-			return "SUCCESS2";
+			return JSONUtils.toJSONString(obj);
 		}
 	}
 }
