@@ -38,7 +38,20 @@ eureka:
     instance: 
         instance-id: hqcloud-club
         prefer-ip-address: true
-        
+feign:
+  client: 
+   config: 
+    default: 
+     connectTimeout: 5000
+     readTimeout: 5000
+     loggerLevel: basic
+  httpclient: 
+   enabled: false
+  okhttp: 
+   enabled: true 
+  hystrix: 
+   enabled: true
+  
 info: 
     app.name: hqCloud-Club
     company.name: www.hq.com
