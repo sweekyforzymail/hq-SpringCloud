@@ -124,5 +124,6 @@
 		<module>hqcloud-eurekaserver</module>
 		<module>hqcloud-club</module>
 		<module>hqcloud-training</module>
+		<module>hqcloud-gateway</module>
 	</modules>
 </project>
