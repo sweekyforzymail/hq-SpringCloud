@@ -24,6 +24,7 @@
 		<logback.version>1.2.3</logback.version>
 		<log4j.version>1.2.17</log4j.version>
 		<feign-okhttp.version>9.4.0</feign-okhttp.version>
+		<netflix-hystrix.version>1.4.5.RELEASE</netflix-hystrix.version>
 	</properties>
 
 	<dependencyManagement>
@@ -48,6 +49,12 @@
 			    <groupId>io.github.openfeign</groupId>
 			    <artifactId>feign-okhttp</artifactId>
 			    <version>${feign-okhttp.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			    <version>${netflix-hystrix.version}</version>
 			</dependency>
 
 			<dependency>

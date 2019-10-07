@@ -42,3 +42,9 @@ feign:
    enabled: true 
   hystrix: 
    enabled: true
+
+info: 
+ app.name: hqCloud-Training
+ company.name: www.hq.com
+ build.artifactId: $project.artifactId$
+ build.version: $project.version$
