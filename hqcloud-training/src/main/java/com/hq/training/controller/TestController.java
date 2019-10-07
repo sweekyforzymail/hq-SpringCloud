@@ -43,7 +43,7 @@ public class TestController {
 		if (ObjectUtils.isEmpty(obj)) {
 			return "FILER";
 		} else {
-			return "SUCCESS";// PS:当时用该方式时，服务提供方返回值为 "SUCCESS" 时，消费端不开心
+			return "SUCCESS";// PS:当使用该方式时，服务提供方返回值为 "SUCCESS" 时，消费端不开心 ？
 		}
 	}
 
