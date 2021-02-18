@@ -1,0 +1,53 @@
+server:
+  port: 9001
+
+spring:
+    application:
+        name: hqcloud-training
+    datasource:
+    # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/hqcloud_club?useUnicode=true&characterEncoding=UTF8
+      username: root
+      password: 123456
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8000/eureka/
+    instance: 
+      instance-id: hqcloud-training
+      prefer-ip-address: true
+feign:
+  client: 
+   config: 
+    default: 
+     connectTimeout: 5000
+     readTimeout: 5000
+     loggerLevel: basic
+  httpclient: 
+   enabled: false
+  okhttp: 
+   enabled: true 
+  hystrix: 
+   enabled: true
+
+info: 
+ app.name: hqCloud-Training
+ company.name: www.hq.com
+ build.artifactId: $project.artifactId$
+ build.version: $project.version$

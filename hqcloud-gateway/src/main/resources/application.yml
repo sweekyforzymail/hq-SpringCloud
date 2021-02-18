@@ -1,0 +1,40 @@
+server:
+  port: 7000
+
+spring:
+    application:
+        name: hqcloud-gateway
+
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8000/eureka/
+    instance: 
+      instance-id: hqcloud-gateway
+      prefer-ip-address: true
+feign:
+  client: 
+   config: 
+    default: 
+     connectTimeout: 5000
+     readTimeout: 5000
+     loggerLevel: basic
+  httpclient: 
+   enabled: false
+  okhttp: 
+   enabled: true 
+  hystrix: 
+   enabled: true
+
+info: 
+ app.name: hqCloud-gateway
+ company.name: www.hq.com
+ build.artifactId: $project.artifactId$
+ build.version: $project.version$
+ 
+zuul: 
+  prefix: /hqCloud #前缀
+  ignored-services: "*" #统一映射
+  routes: 
+    club.serviceId: hqcloud-club
+    club.path: /fromClub/**
