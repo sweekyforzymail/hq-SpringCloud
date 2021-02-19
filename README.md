@@ -57,6 +57,8 @@ API-微信小程序
   |——自有业务一  
   |——自有业务... ...  
   
+[如图](https://github.com/sweekyforzymail/hq-SpringCloud/blob/master/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86.jpg)  
+  
 #### 二，框架组件
 SpringBoot 1.5.9.RELEASE：对应SpringCloud版本(此处有坑)  
 SpringCloud Dalston.SR1：对应SpringBoot版本(此处有坑)  
