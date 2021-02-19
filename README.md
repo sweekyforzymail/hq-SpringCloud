@@ -58,6 +58,11 @@ API-微信小程序
   |——自有业务... ...  
   
 [如图](https://github.com/sweekyforzymail/hq-SpringCloud/blob/master/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86.jpg)  
+<table>
+    <tr>
+        <td><img src="https://github.com/sweekyforzymail/hq-SpringCloud/blob/master/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86.jpg"/></td>
+    </tr>
+</table>
   
 #### 二，框架组件
 SpringBoot 1.5.9.RELEASE：对应SpringCloud版本(此处有坑)  
