@@ -57,7 +57,7 @@ API-微信小程序
   |——自有业务一  
   |——自有业务... ...  
   
-[如图](https://github.com/sweekyforzymail/hq-SpringCloud/blob/master/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86.jpg)  
+### 示意图
 <table>
     <tr>
         <td><img src="https://github.com/sweekyforzymail/hq-SpringCloud/blob/master/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86.jpg"/></td>
